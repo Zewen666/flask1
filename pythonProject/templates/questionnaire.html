@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire</title>
+</head>
+<body>
+    <h1>Questionnaire</h1>
+    <form method="POST" action="/questionnaire">
+        {{ form.hidden_tag() }}  <!-- CSRF protection -->
+        <p>
+            {{ form.short_term.label }}<br>
+            {{ form.short_term(size=32) }}  <!-- Short term goals input field -->
+        </p>
+        <p>
+            {{ form.long_term.label }}<br>
+            {{ form.long_term(rows=4, cols=32) }}  <!-- Long term goals text area -->
+        </p>
+        <p>
+            {{ form.choices.label }}<br>
+            {{ form.choices }}  <!-- Choices radio buttons -->
+        </p>
+        <p><input type="submit" value="Submit"></p>  <!-- Submit button -->
+    </form>
+</body>
+</html>
